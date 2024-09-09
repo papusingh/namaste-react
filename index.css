@@ -1,156 +1,184 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* Logo styling */
 .logo-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    width: 120px;
-    transition: transform 0.3s ease;
+  width: 120px;
+  transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
 }
 
 /* Navigation styling */
 .nav-items ul {
-    display: flex;
-    gap: 20px; /* Better spacing between nav items */
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 20px; /* Better spacing between nav items */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-items ul li {
-    font-size: 18px;
-    position: relative;
+  font-size: 18px;
+  position: relative;
 }
 
 .nav-items > ul {
-    font-size: 24px;
-    display: flex;
-    list-style-type: none;
+  font-size: 24px;
+  display: flex;
+  list-style-type: none;
 }
 
 .nav-items > ul > li {
-    padding: 10px;
-    margin: 10px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .nav-items ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-items ul li a:hover {
-    color: #007bff; /* Change link color on hover */
+  color: #007bff; /* Change link color on hover */
 }
 
 .nav-items ul li::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #007bff;
-    transition: width 0.3s;
-    position: absolute;
-    left: 0;
-    bottom: -5px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
 }
 
 .nav-items ul li:hover::after {
-    width: 100%; /* Underline animation effect on hover */
+  width: 100%; /* Underline animation effect on hover */
 }
 
 /* Responsive styling */
 @media (max-width: 768px) {
-    .nav-items ul {
-        flex-direction: column;
-        align-items: center;
-    }
+  .nav-items ul {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .header {
-        flex-direction: column;
-    }
+  .header {
+    flex-direction: column;
+  }
 }
 
 .res-card {
-    width: 250px;
-    height: auto;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding-bottom: 0%;
+  width: 250px;
+  height: auto;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 0%;
+  cursor: pointer;
 }
 
 .res-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .search {
-    padding: 10px;
-    margin: 10px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .res-logo {
-    width: 100%;
-    height: 60%;
-    border-radius: 10px;
+  width: 100%;
+  height: 60%;
+  border-radius: 10px;
 }
 
 .res-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .res-info {
-    padding: 10px 0;
-    text-align: center;
+  padding: 10px 0;
+  text-align: center;
 }
 
-
 .res-name {
-    font-size: 1.2rem;
-    margin: 5px 0;
-    font-weight: 600;
+  font-size: 1.2rem;
+  margin: 5px 0;
+  font-weight: 600;
 }
 
 .res-cuisine {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0;
 }
 
 .res-details {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    margin-top: 10px;
-    color: #333;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: #333;
 }
 
-.res-rating, .res-time {
-    background-color: #f1f1f1;
-    padding: 5px 10px;
-    border-radius: 5px;
-    padding-bottom: 0%;
+.res-rating,
+.res-time {
+  background-color: #f1f1f1;
+  padding: 5px 10px;
+  border-radius: 5px;
+  padding-bottom: 0%;
+}
+
+.filter {
+  text-align: center; /* Centers the button inside the div */
+}
+
+.filter-btn {
+  background-color: #ff7043; /* Vibrant orange color */
+  color: white; /* Text color */
+  font-size: 16px; /* Font size */
+  padding: 12px 24px; /* Padding for a comfortable button size */
+  border: none; /* Removes border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  cursor: pointer; /* Changes cursor to pointer */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+  margin-top: 12px;
+}
+
+.filter-btn:hover {
+  background-color: #ff5722; /* Darker shade of orange on hover */
+  transform: translateY(-2px); /* Slightly raises the button on hover */
+}
+
+.filter-btn:active {
+  background-color: #e64a19; /* Even darker shade when clicked */
+  transform: translateY(0); /* Button returns to normal position */
 }
