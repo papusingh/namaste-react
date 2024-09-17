@@ -18,3 +18,9 @@
 -Https
 -Tree Shaking - remove unused code
 -Different dev and prod build
+
+# 2 types of Routing in web apps
+
+-Client Side Routing
+
+- Server side Routing
