@@ -266,3 +266,10 @@
 .search-box:hover {
   border-color: #ccc; /* Change border color on hover */
 }
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 5px;
+}
