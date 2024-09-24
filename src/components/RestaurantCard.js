@@ -5,22 +5,22 @@ const RestaurantCard = (props) => {
     : "";
   const time = resData.sla.deliveryTime;
   return (
-    <div className="res-card">
+    <div className="m-4 p-2 w-[250px] h-[480px] rounded-lg hover:bg-slate-100">
       <img
-        className="res-logo"
+        className="res-logo rounded-lg w-[250px] h-[300px]"
         alt="res-logo"
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
           cloudinaryImageId
         }
       />
-      <div className="res-info">
-        <h3 className="res-name">{name}</h3>
-        <div className="res-details">
-          <span className="res-rating">{avgRating} ⭐</span>
-          <span className="res-time">{time} minutes</span>
+      <div>
+        <h3 className="font-bold py-2 text-lg">{name}</h3>
+        <div>
+          <span>{avgRating} ⭐</span>
+          <span>{time} minutes</span>
         </div>
-        <h4 className="res-cuisine">{cuisines.join(", ")}</h4>
+        <h4>{cuisines.join(", ")}</h4>
       </div>
     </div>
   );

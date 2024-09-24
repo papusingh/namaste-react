@@ -31,17 +31,17 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className="search my-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black rounded-md pl-1"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="search-button"
+            className="mx-4 px-4 py-2 bg-orange-400 rounded-lg"
             onClick={() => {
               filterResturantBySearch;
             }}
@@ -49,16 +49,18 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            filterTopRatedResturants;
-          }}
-        >
-          Top Rated Restaurant
-        </button>
+        <div className=" flex justify-center">
+          <button
+            className="bg-orange-400 mx-4 px-4 py-2 mb-4 rounded-lg text-center shadow-lg"
+            onClick={() => {
+              filterTopRatedResturants;
+            }}
+          >
+            Top Rated Restaurant
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredResturantListData.map((resturant) => (
           <Link key={resturant.info.id} to={"/resturants/" + resturant.info.id}>
             <RestaurantCard resData={resturant.info} />{" "}
