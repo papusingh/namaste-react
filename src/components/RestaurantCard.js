@@ -3,7 +3,7 @@ const RestaurantCard = (props) => {
   const { name, cuisines, avgRating, cloudinaryImageId } = resData
     ? resData
     : "";
-  const time = resData.sla.deliveryTime;
+  const time = resData?.sla?.deliveryTime;
   return (
     <div className="m-4 p-2 w-[250px] h-[480px] rounded-lg hover:bg-slate-100">
       <img
@@ -20,10 +20,26 @@ const RestaurantCard = (props) => {
           <span>{avgRating} ⭐</span>
           <span>{time} minutes</span>
         </div>
-        <h4>{cuisines.join(", ")}</h4>
+        <h4>{cuisines?.join(", ")}</h4>
       </div>
     </div>
   );
+};
+
+//Higer order function
+//input --> RestaurantCard ==> ResturantCardWithPromoted
+
+export const withPromotedLevel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-white to-white text-orange-600 mx-6 my-4 px-2 rounded-lg font-bold">
+          Veg
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

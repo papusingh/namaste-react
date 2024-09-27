@@ -1,6 +1,7 @@
 import User from "./User";
 import UserClass from "./UserClass";
 import React from "react";
+import UserConext from "../utils/UserContext";
 
 class About extends React.Component {
   constructor(props) {
@@ -17,7 +18,14 @@ class About extends React.Component {
   render() {
     // console.log("parrent render");
     return (
-      <div>
+      <div className="m-2">
+        <div>
+          <UserConext.Consumer>
+            {({ loggedInUser }) => (
+              <h1 className="font-bold mb-2">loggedIn User : {loggedInUser}</h1>
+            )}
+          </UserConext.Consumer>
+        </div>
         <h1>About</h1>
         <h2>This is Namaste React Web Series</h2>
         <UserClass

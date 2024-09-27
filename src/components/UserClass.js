@@ -9,11 +9,11 @@ class UserClass extends React.Component {
         location: "default",
       },
     };
-    console.log("contractor called");
+    // console.log("contractor called");
   }
 
   async componentDidMount() {
-    console.log("component did mount called");
+    // console.log("component did mount called");
     //api call
     const data = await fetch("https://api.github.com/users/papusingh");
     const json = await data.json();
@@ -26,15 +26,15 @@ class UserClass extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("component did update got called");
+    // console.log("component did update got called");
   }
 
   componentWillUnmount() {
-    console.log("component will unmounte called");
+    // console.log("component will unmounte called");
   }
 
   render() {
-    console.log("render is called");
+    // console.log("render is called");
     const { name, location, avatar_url } = this.state.userInfo;
     return (
       <div className="user-card">

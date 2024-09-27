@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLevel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
@@ -14,6 +14,8 @@ const Body = () => {
     filterTopRatedResturants,
   } = useBody();
 
+  const ResturantCardPromoted = withPromotedLevel(RestaurantCard);
+
   const onlineStatus = useOnlineStatus();
   if (!onlineStatus) {
     return (
@@ -22,8 +24,6 @@ const Body = () => {
       </h1>
     );
   }
-
-  console.log("res ", resturantListData);
 
   // Conditional rending
   return resturantListData.length === 0 ? (
@@ -63,7 +63,11 @@ const Body = () => {
       <div className="flex flex-wrap">
         {filteredResturantListData.map((resturant) => (
           <Link key={resturant.info.id} to={"/resturants/" + resturant.info.id}>
-            <RestaurantCard resData={resturant.info} />{" "}
+            {resturant?.info?.veg ? (
+              <ResturantCardPromoted resData={resturant.info} />
+            ) : (
+              <RestaurantCard resData={resturant.info} />
+            )}
           </Link>
         ))}
       </div>
