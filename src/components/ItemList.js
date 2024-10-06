@@ -1,5 +1,14 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
+
 const ItemList = (props) => {
   const items = props.items;
+  const dispach = useDispatch();
+  const handleAddItem = (item) => {
+    //dispach an action
+    dispach(addItem(item));
+  };
+
   return (
     <div className="">
       {items.map((item, index) => (
@@ -34,7 +43,10 @@ const ItemList = (props) => {
                 item?.card?.info?.imageId
               }
             />
-            <button className="p-2 bg-white shadow-lg rounded-lg font-bold text-green-400 w-20 mb-4">
+            <button
+              className="p-2 bg-white shadow-lg rounded-lg font-bold text-green-400 w-20 mb-4"
+              onClick={() => handleAddItem(item)}
+            >
               Add
             </button>
           </div>
